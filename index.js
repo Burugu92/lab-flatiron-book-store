@@ -44,4 +44,48 @@ const bookStore = {
 }
 
 // Write your code here!
+// Select the header element with id="header"
+const bookStoreTitle = document.getElementById('header');
 
+// Change the textContent to match the bookstore name
+bookStoreTitle.textContent = bookStore.name;
+
+
+// OPTIONAL: Remove the example book if it exists
+const exampleBook = document.getElementById('delete-this');
+if (exampleBook) {
+  exampleBook.remove();
+}
+
+// Select the book list element where we'll append our books
+const bookList = document.getElementById('book-list');
+
+// Loop through every book in the bookStore.books array
+bookStore.books.forEach(book => {
+  
+  // 1. CREATE ELEMENTS for each book
+  const bookContainer = document.createElement('li');
+  const bookTitle = document.createElement('h3');
+  const bookAuthor = document.createElement('p');
+  const bookImage = document.createElement('img');
+  
+  
+  // Set bookTitle textContent to the title of the book
+  bookTitle.textContent = book.title;
+  
+  // Set bookAuthor textContent to the author of the book
+  bookAuthor.textContent = book.author;
+  
+  // Set bookImage src to the image url of the book
+  bookImage.src = book.imageUrl;
+  
+  
+  // Append image, title, and author to the container
+  bookContainer.appendChild(bookImage);
+  bookContainer.appendChild(bookTitle);
+  bookContainer.appendChild(bookAuthor);
+  
+  
+  // Add the completed book container to the main book list
+  bookList.appendChild(bookContainer);
+});

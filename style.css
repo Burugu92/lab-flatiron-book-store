@@ -1,18 +1,106 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
 
-.list ul{
+/* Header styling */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+/* Main content area */
+main {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Book list container */
+.list ul {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
 }
 
-.list-li{
+/* Individual book item */
+.list ul li {
     list-style: none;
-    width:200px;
+    width: 220px;
     box-shadow: 8px 10px #c9c8c8;
-    padding: 5px;
-    
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.list-li img{
-    width:190px;
+
+/* Hover effect for books */
+.list ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 15px #b0b0b0;
+}
+
+/* Book images - uniform size */
+.list ul li img {
+    width: 220px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+/* Book titles */
+.list ul li h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #2c3e50;
+    min-height: 48px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Book authors */
+.list ul li p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 5px 0;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Hide the example book if it still exists */
+#delete-this {
+    display: none;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .list ul {
+        justify-content: center;
+    }
+    
+    .list ul li {
+        width: 200px;
+    }
+    
+    .list ul li img {
+        width: 200px;
+        height: 270px;
+    }
 }
